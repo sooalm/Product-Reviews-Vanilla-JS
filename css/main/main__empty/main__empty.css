@@ -1,0 +1,21 @@
+
+.main__empty {
+    margin:0;
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main__notFound{
+    display:flex;
+    flex-direction: row;
+    gap:5px;
+  }
+  .main__empty p{
+    font-size:1.5rem;
+    margin:0;
+  }
+  .main__notFound:hover{
+    color:#06d0eb;
+    cursor:default;
+  }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <!-- [Delete this comment] This file is the main file for the challenge. For the most part, you should be editing this file. -->
   <head>
@@ -9,325 +9,443 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="img/favicon.ico" sizes="any" />
-    <script  type="module" src="./js/scripts.js"></script>
+    <script type="module" src="./js/scripts.js"></script>
   </head>
   <body>
     <div class="container">
-
-      <svg class="svgPic crossClose"> 
-        <use  xlink:href="/img/icons-sprites.svg#close"></use>
+      <svg class="svgPic crossClose">
+        <use xlink:href="/img/icons-sprites.svg#close"></use>
       </svg>
 
-      <div class="review-panel ">
-
+      <div class="review-panel">
         <!-- review-panel__container--empty -->
-       <div class="review-panel__container  ">
-        <div class="review-panel__header">
-          <h1 class="review-panel__h1">Overall Rating</h1>
-          <div class="row-container ">
-            <p class="review-panel__p review-panel__p--bigger">0</p>
-           
-           
-              <svg class="svgPic-starBig row-container__svg " viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" 
-              style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
+        <div class="review-panel__container">
+          <div class="review-panel__header">
+            <h1 class="review-panel--zeroMargin">Overall Rating</h1>
+            <div class="review-panel__row-container">
+              <p class="review-panel--zeroMargin js-overall-rating">0</p>
 
-             
-              <defs>
-                <linearGradient id="third">
-                  <stop offset="0%" stop-color="#ffd800"/>
-                  <stop offset="40%" stop-color="#ffd800"/>
-                  <stop offset="40%" stop-color="#474A51"/>
-                  <stop offset="100%" stop-color="#474A51"/>
-                </linearGradient>
+              <div class="stars stars--mLeft">
+                <svg
+                  class="svgPic-starBig"
+                  viewBox="0 0 881 130"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve">
+                  <path
+                    fill="currentColor"
+                    d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                    transform="translate(-634.728 -382.568)" />
+                  <path
+                    fill="currentColor"
+                    d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                    transform="translate(-447.914 -382.568)" />
+                  <path
+                    fill="currentColor"
+                    d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                    transform="translate(-261.961 -382.568)" />
+                  <path
+                    fill="currentColor"
+                    d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                    transform="translate(-76.024 -382.568)" />
+                  <path
+                    fill="currentColor"
+                    d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                    transform="translate(109.853 -382.568)" />
+                </svg>
 
-                <linearGradient id="half">
-                  <stop offset="50%" stop-color="#ffd800"/>
-                  <stop offset="50%" stop-color="#474A51"/>
-                </linearGradient>
-
-                <linearGradient id="two-thirds">
-                  <stop offset="67%" stop-color="#ffd800"/>
-                  <stop offset="67%" stop-color="#474A51"/>
-                  <stop offset="100%" stop-color="#474A51"/>
-                </linearGradient>
-
-                <linearGradient id="full">
-                  <stop offset="100%" stop-color="#ffd800"/>
-                  
-                </linearGradient>
-              </defs>
-
-              
-              <path fill="currentColor" d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-                transform="translate(-634.728 -382.568)"/>
-              <path fill="currentColor"  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-               transform="translate(-447.914 -382.568)"/>
-              <path fill="currentColor"  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-               transform="translate(-261.961 -382.568)"/>
-              <path fill="currentColor"  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-               transform="translate(-76.024 -382.568)"/>
-              <path fill="currentColor"  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-               transform="translate(109.853 -382.568)"/>
-            </svg>
-
-            
-
+                <div class="review-panel__cover" style="width: 50%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="review-panel__score">
+            <div class="review-panel__row-container">
+              <p class="review-panel--zeroMargin review-panel--wLimiter">Excellent</p>
+              <div class="lines">
+                <div class="review-panel__rate-line review-panel__rate-line--strongGreen-bg"></div>
+                <div class="review-panel__cover review-panel__cover--lines" style="width: 70%"></div>
+              </div>
+              <p class="review-panel--zeroMargin review-panel__rate-percent js-stars-percent">0%</p>
+            </div>
+            <div class="review-panel__row-container">
+              <p class="review-panel--zeroMargin review-panel--wLimiter">Good</p>
+              <div class="lines">
+                <div class="review-panel__rate-line review-panel__rate-line--green-bg"></div>
+                <div class="review-panel__cover review-panel__cover--lines" style="width: 70%"></div>
+              </div>
+              <p class="review-panel--zeroMargin review-panel__rate-percent js-stars-percent">0%</p>
+            </div>
+            <div class="review-panel__row-container">
+              <p class="review-panel--zeroMargin review-panel--wLimiter">Average</p>
+              <div class="lines">
+                <div class="review-panel__rate-line"></div>
+                <div class="review-panel__cover review-panel__cover--lines" style="width: 70%"></div>
+              </div>
+              <p class="review-panel--zeroMargin review-panel__rate-percent js-stars-percent">0%</p>
+            </div>
+            <div class="review-panel__row-container">
+              <p class="review-panel--zeroMargin review-panel--wLimiter">Below Average</p>
+              <div class="lines">
+                <div class="review-panel__rate-line review-panel__rate-line--yellow-bg"></div>
+                <div class="review-panel__cover review-panel__cover--lines" style="width: 70%"></div>
+              </div>
+              <p class="review-panel--zeroMargin review-panel__rate-percent js-stars-percent">0%</p>
+            </div>
+            <div class="review-panel__row-container">
+              <p class="review-panel--zeroMargin review-panel--wLimiter">Poor</p>
+              <div class="lines">
+                <div class="review-panel__rate-line review-panel__rate-line--weakYellow-bg"></div>
+                <div class="review-panel__cover review-panel__cover--lines" style="width: 70%"></div>
+              </div>
+              <p class="review-panel--zeroMargin review-panel__rate-percent js-stars-percent">0%</p>
+            </div>
           </div>
         </div>
-        <div class="review-panel__score ">
-          <div class="row-container ">
-            <p class="review-panel__p review-panel__p--Width112">Excellent</p>
-            <div class="review-panel__rate-line"></div>
-            <p class="review-panel__p">0%</p>
-          </div>
-          <div class="row-container">
-            <p class="review-panel__p review-panel__p--Width112">Good</p>
-            <div class="review-panel__rate-line"></div>
-            <p class="review-panel__p">0%</p>
-          </div>
-          <div class="row-container">
-            <p class="review-panel__p review-panel__p--Width112">Average</p>
-            <div class="review-panel__rate-line"></div>
-            <p class="review-panel__p">0%</p>
-          </div>
-          <div class="row-container">
-            <p class="review-panel__p review-panel__p--Width112">Below Average</p>
-            <div class="review-panel__rate-line"></div>
-            <p class="review-panel__p">0%</p>
-          </div>
-          <div class="row-container">
-            <p class="review-panel__p review-panel__p--Width112">Poor</p>
-            <div class="review-panel__rate-line"></div>
-            <p class="review-panel__p">0%</p>
-          </div>
-          
-          
-        </div>
-
-       </div>
       </div>
       <main class="main">
-
         <div class="main__empty">
           <div class="main__notFound">
-            <svg class="svgPic svgPic--alignCenter"> 
+            <svg class="svgPic svgPic--alignCenter">
               <use xlink:href="/img/icons-sprites.svg#magnifier"></use>
             </svg>
-            <h1> No reviews yet!</h1>
+            <h1>No reviews yet!</h1>
           </div>
           <p>Be the first to review this product</p>
         </div>
 
         <div class="testimonial">
-         <div class="testimonial__header">
-          <img src="/img/Joe Peach.jpg"  alt="" class="testimonial__img">
-          <div class="testimonial__username"> John Dou</div>
-          <div class="testimonial__date">21 ноября 2025</div>
-          <div class="testimonial__score">
-            <svg class="svgPic--star " viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" 
-              style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
-              <path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-634.728 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-447.914 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-261.961 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-76.024 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:currentColor" transform="translate(109.853 -382.568)"/>
-            </svg>
+          <div class="testimonial__header">
+            <img src="/img/Joe Peach.jpg" alt="" class="testimonial__img" />
+            <div class="testimonial__username">John Dou</div>
+            <div class="testimonial__date">21 ноября 2025</div>
+            <div class="testimonial__score">
+              <svg class="svgPic-star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-634.728 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-447.914 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-261.961 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-76.024 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: currentColor"
+                  transform="translate(109.853 -382.568)" />
+              </svg>
+            </div>
           </div>
+          <div class="testimonial__quote">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium,
+            temporibus magnam asperiores excepturi est ad. Molestias?
           </div>
-         <div class="testimonial__quote">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium, temporibus magnam asperiores excepturi est ad. Molestias?
-         </div>
         </div>
         <div class="testimonial">
           <div class="testimonial__header">
-           <img src="/img/Joe Peach.jpg"  alt="" class="testimonial__img">
-           <div class="testimonial__username"> John Dou</div>
-           <div class="testimonial__date">21 ноября 2025</div>
-           <div class="testimonial__score">
-            <svg class="svgPic--star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" 
-            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
-            <path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-            style="fill:#ffd800" transform="translate(-634.728 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-            style="fill:#ffd800" transform="translate(-447.914 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-            style="fill:#ffd800" transform="translate(-261.961 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-            style="fill:#ffd800" transform="translate(-76.024 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-            style="fill:currentColor" transform="translate(109.853 -382.568)"/>
-          </svg>
-           </div>
-           </div>
- 
-          <div class="testimonial__quote">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium, temporibus magnam asperiores excepturi est ad. Molestias?
+            <img src="/img/Joe Peach.jpg" alt="" class="testimonial__img" />
+            <div class="testimonial__username">John Dou</div>
+            <div class="testimonial__date">21 ноября 2025</div>
+            <div class="testimonial__score">
+              <svg class="svgPic-star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-634.728 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-447.914 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-261.961 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-76.024 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: currentColor"
+                  transform="translate(109.853 -382.568)" />
+              </svg>
+            </div>
           </div>
-         </div> <div class="testimonial">
+
+          <div class="testimonial__quote">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium,
+            temporibus magnam asperiores excepturi est ad. Molestias?
+          </div>
+        </div>
+        <div class="testimonial">
           <div class="testimonial__header">
-           <img src="/img/Joe Peach.jpg"  alt="" class="testimonial__img">
-           <div class="testimonial__username"> John Dou</div>
-           <div class="testimonial__date">21 ноября 2025</div>
-           <div class="testimonial__score">
-             <svg class="svgPic--star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" 
-              style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
-              <path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-634.728 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-447.914 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-261.961 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-76.024 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:currentColor" transform="translate(109.853 -382.568)"/>
-            </svg>
-           </div>
-           </div>
- 
-          <div class="testimonial__quote">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium, temporibus magnam asperiores excepturi est ad. Molestias?
+            <img src="/img/Joe Peach.jpg" alt="" class="testimonial__img" />
+            <div class="testimonial__username">John Dou</div>
+            <div class="testimonial__date">21 ноября 2025</div>
+            <div class="testimonial__score">
+              <svg class="svgPic-star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-634.728 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-447.914 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-261.961 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-76.024 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: currentColor"
+                  transform="translate(109.853 -382.568)" />
+              </svg>
+            </div>
           </div>
-         </div> <div class="testimonial">
+
+          <div class="testimonial__quote">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium,
+            temporibus magnam asperiores excepturi est ad. Molestias?
+          </div>
+        </div>
+        <div class="testimonial">
           <div class="testimonial__header">
-           <img src="/img/Joe Peach.jpg"  alt="" class="testimonial__img">
-           <div class="testimonial__username"> John Dou</div>
-           <div class="testimonial__date">21 ноября 2025</div>
-           <div class="testimonial__score">
-             <svg class="svgPic--star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" 
-              style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
-              <path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-634.728 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-447.914 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-261.961 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-76.024 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:currentColor" transform="translate(109.853 -382.568)"/>
-            </svg>
-           </div>
-           </div>
- 
-          <div class="testimonial__quote">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium, temporibus magnam asperiores excepturi est ad. Molestias?
+            <img src="/img/Joe Peach.jpg" alt="" class="testimonial__img" />
+            <div class="testimonial__username">John Dou</div>
+            <div class="testimonial__date">21 ноября 2025</div>
+            <div class="testimonial__score">
+              <svg class="svgPic-star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-634.728 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-447.914 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-261.961 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-76.024 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: currentColor"
+                  transform="translate(109.853 -382.568)" />
+              </svg>
+            </div>
           </div>
-         </div> <div class="testimonial">
+
+          <div class="testimonial__quote">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium,
+            temporibus magnam asperiores excepturi est ad. Molestias?
+          </div>
+        </div>
+        <div class="testimonial">
           <div class="testimonial__header">
-           <img src="/img/Joe Peach.jpg"  alt="" class="testimonial__img">
-           <div class="testimonial__username"> John Dou</div>
-           <div class="testimonial__date">21 ноября 2025</div>
-           <div class="testimonial__score">
-             <svg class="svgPic--star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" 
-              style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
-              <path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-634.728 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-447.914 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-261.961 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-76.024 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:currentColor" transform="translate(109.853 -382.568)"/>
-            </svg>
-           </div>
-           </div>
- 
-          <div class="testimonial__quote">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium, temporibus magnam asperiores excepturi est ad. Molestias?
+            <img src="/img/Joe Peach.jpg" alt="" class="testimonial__img" />
+            <div class="testimonial__username">John Dou</div>
+            <div class="testimonial__date">21 ноября 2025</div>
+            <div class="testimonial__score">
+              <svg class="svgPic-star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-634.728 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-447.914 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-261.961 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-76.024 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: currentColor"
+                  transform="translate(109.853 -382.568)" />
+              </svg>
+            </div>
           </div>
-         </div> <div class="testimonial">
+
+          <div class="testimonial__quote">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium,
+            temporibus magnam asperiores excepturi est ad. Molestias?
+          </div>
+        </div>
+        <div class="testimonial">
           <div class="testimonial__header">
-           <img src="/img/Joe Peach.jpg"  alt="" class="testimonial__img">
-           <div class="testimonial__username"> John Dou</div>
-           <div class="testimonial__date">21 ноября 2025</div>
-           <div class="testimonial__score">
-             <svg class="svgPic--star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" 
-              style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
-              <path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-634.728 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-447.914 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-261.961 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-76.024 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:currentColor" transform="translate(109.853 -382.568)"/>
-            </svg>
-           </div>
-           </div>
- 
-          <div class="testimonial__quote">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium, temporibus magnam asperiores excepturi est ad. Molestias?
+            <img src="/img/Joe Peach.jpg" alt="" class="testimonial__img" />
+            <div class="testimonial__username">John Dou</div>
+            <div class="testimonial__date">21 ноября 2025</div>
+            <div class="testimonial__score">
+              <svg class="svgPic-star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-634.728 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-447.914 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-261.961 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-76.024 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: currentColor"
+                  transform="translate(109.853 -382.568)" />
+              </svg>
+            </div>
           </div>
-         </div> <div class="testimonial">
+
+          <div class="testimonial__quote">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium,
+            temporibus magnam asperiores excepturi est ad. Molestias?
+          </div>
+        </div>
+        <div class="testimonial">
           <div class="testimonial__header">
-           <img src="/img/Joe Peach.jpg"  alt="" class="testimonial__img">
-           <div class="testimonial__username"> John Dou</div>
-           <div class="testimonial__date">21 ноября 2025</div>
-           <div class="testimonial__score">
-             <svg class="svgPic--star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" 
-              style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
-              <path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-634.728 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-447.914 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-261.961 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-76.024 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:currentColor" transform="translate(109.853 -382.568)"/>
-            </svg>
-           </div>
-           </div>
- 
-          <div class="testimonial__quote">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium, temporibus magnam asperiores excepturi est ad. Molestias?
+            <img src="/img/Joe Peach.jpg" alt="" class="testimonial__img" />
+            <div class="testimonial__username">John Dou</div>
+            <div class="testimonial__date">21 ноября 2025</div>
+            <div class="testimonial__score">
+              <svg class="svgPic-star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-634.728 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-447.914 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-261.961 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-76.024 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: currentColor"
+                  transform="translate(109.853 -382.568)" />
+              </svg>
+            </div>
           </div>
-         </div> <div class="testimonial">
+
+          <div class="testimonial__quote">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium,
+            temporibus magnam asperiores excepturi est ad. Molestias?
+          </div>
+        </div>
+        <div class="testimonial">
           <div class="testimonial__header">
-           <img src="/img/Joe Peach.jpg"  alt="" class="testimonial__img">
-           <div class="testimonial__username"> John Dou</div>
-           <div class="testimonial__date">21 ноября 2025</div>
-           <div class="testimonial__score">
-             <svg class="svgPic--star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" 
-              style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
-              <path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-634.728 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-447.914 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-261.961 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-76.024 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:currentColor" transform="translate(109.853 -382.568)"/>
-            </svg>
-           </div>
-           </div>
- 
-          <div class="testimonial__quote">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium, temporibus magnam asperiores excepturi est ad. Molestias?
+            <img src="/img/Joe Peach.jpg" alt="" class="testimonial__img" />
+            <div class="testimonial__username">John Dou</div>
+            <div class="testimonial__date">21 ноября 2025</div>
+            <div class="testimonial__score">
+              <svg class="svgPic-star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-634.728 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-447.914 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-261.961 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-76.024 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: currentColor"
+                  transform="translate(109.853 -382.568)" />
+              </svg>
+            </div>
           </div>
-         </div> <div class="testimonial">
+
+          <div class="testimonial__quote">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium,
+            temporibus magnam asperiores excepturi est ad. Molestias?
+          </div>
+        </div>
+        <div class="testimonial">
           <div class="testimonial__header">
-           <img src="/img/Joe Peach.jpg"  alt="" class="testimonial__img">
-           <div class="testimonial__username"> John Dou</div>
-           <div class="testimonial__date">21 ноября 2025</div>
-           <div class="testimonial__score">
-             <svg class="svgPic--star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" 
-              style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
-              <path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-634.728 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-447.914 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-261.961 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:#ffd800" transform="translate(-76.024 -382.568)"/><path d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z" 
-              style="fill:currentColor" transform="translate(109.853 -382.568)"/>
-            </svg>
-           </div>
-           </div>
- 
-          <div class="testimonial__quote">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium, temporibus magnam asperiores excepturi est ad. Molestias?
+            <img src="/img/Joe Peach.jpg" alt="" class="testimonial__img" />
+            <div class="testimonial__username">John Dou</div>
+            <div class="testimonial__date">21 ноября 2025</div>
+            <div class="testimonial__score">
+              <svg class="svgPic-star" viewBox="0 0 881 130" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-634.728 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-447.914 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-261.961 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: #ffd800"
+                  transform="translate(-76.024 -382.568)" />
+                <path
+                  d="m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z"
+                  style="fill: currentColor"
+                  transform="translate(109.853 -382.568)" />
+              </svg>
+            </div>
           </div>
-         </div>
-      
+
+          <div class="testimonial__quote">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus fugiat minus laudantium,
+            temporibus magnam asperiores excepturi est ad. Molestias?
+          </div>
+        </div>
       </main>
     </div>
 
     <!-- Attribute this challenge to yourself! -->
     <div class="credits">
       A challenge by
-      <a
-        href="https://www.greatfrontend.com/projects?ref=challenges"
-        target="_blank"
-        >GreatFrontEnd Projects</a
-      >. Built by
-      <a href="https://www.greatfrontend.com/u/your_username" target="_blank"
-        >Eugene Shabrov</a
-      >.
+      <a href="https://www.greatfrontend.com/projects?ref=challenges" target="_blank">GreatFrontEnd Projects</a>. Built
+      by <a href="https://www.greatfrontend.com/u/your_username" target="_blank">Eugene Shabrov</a>.
     </div>
-    
   </body>
 </html>

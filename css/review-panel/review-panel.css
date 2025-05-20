@@ -1,78 +1,90 @@
+.review-panel {
+  display: flex;
+  align-items: center;
 
-
-.review-panel{
-    display: flex;
-    
-    /* justify-content: center; */
-    align-items: center;
-
-    height: 100%;
-    width:50%;
-    /* border:solid 2px black; */
-
-    
-  }
-.review-panel__container{
-    display: flex;
-    flex-direction: column;
-    padding-left: 50px;
-
-    gap:1.8rem;
+  height: 100%;
+  width: 50%;
 }
-.review-panel__container--empty{
+.review-panel__container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+
+  gap: 1.8rem;
+}
+.review-panel__container--empty {
   opacity: 0.6;
-  }
-.review-panel__score{
-  font-size:1.4rem;
 }
-
-.review-panel__h1{
-  margin:0;
-  font-size: 1.8rem;
+.review-panel--zeroMargin {
+  margin: 0;
 }
-.review-panel__p{
-  margin:0;
+.review-panel--wLimiter {
+  width: 80px;
 }
-.review-panel__p--bigger{
+.review-panel__header {
   font-size: 1.2rem;
 }
-.review-panel__p--Width112{
-  width:112px;
-}
-.review-panel__header{
-
-}
-.row-container{
+.review-panel__row-container {
   display: flex;
   flex-direction: row;
-  
-  align-items:center;
-  /* flex: 0;    */
 
-  margin-top:0.6rem;
-  margin-left:0.2rem;
+  align-items: center;
+
+  margin-top: 0.6rem;
+  margin-left: 0.2rem;
 
   position: relative;
 }
-
-.row-container__svg{
-  margin-left:1rem;
-  flex-shrink: 0;       
+.review-panel__score {
+  font-size: 1.1rem;
 }
-
-.review-panel__rate-line{
+.review-panel__rate-line {
   width: 150px;
-  height: 10px;      
-  background: #E6E7EB;
-  
-  margin:0 2rem;
-  border-radius: 25px; 
+  height: 10px;
+  background: #ffd800;
+
+  /* margin: 0 1rem; */
+  border-radius: 25px;
+
+  box-sizing: content-box;
+  padding-left: 1px;
 }
-.review-panel__button{
-  padding:0.8rem;
-  width:min-content;
+.review-panel__rate-line--strongGreen-bg {
+  background: #17a34a;
+}
+.review-panel__rate-line--green-bg {
+  background: #22c45d;
+}
+.review-panel__rate-line--yellow-bg {
+  background: #ffd139;
+}
+.review-panel__rate-line--weakYellow-bg {
+  background: #e9b308;
+}
+.review-panel__cover {
+  background: white;
+  height: 100%;
+  overflow: hidden;
+  mix-blend-mode: color;
+  /* border-radius: 0 5px 5px 0px; */
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.review-panel__rate-percent {
+  width: 2.2rem;
+  text-align: end;
+}
+.lines {
+  margin: 0 1rem;
+  position: relative;
+  width: min-content;
   height: min-content;
 }
+.review-panel__cover--lines {
+  background: #cccccc;
+  mix-blend-mode: normal;
 
-
-
+  border-radius: 0 25px 25px 0;
+}

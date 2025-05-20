@@ -1,0 +1,7 @@
+.stars {
+  position: relative;
+  white-space: nowrap;
+}
+.stars--mLeft {
+  margin-left: 1rem;
+}

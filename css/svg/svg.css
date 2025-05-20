@@ -1,33 +1,40 @@
-.svgPic{
-    height:24px;
-    width:24px;
-    align-self:center;
+.svgPic {
+  height: 24px;
+  width: 24px;
+  align-self: center;
 }
-.svgPic--alignCenter{
-    align-self:center;
+.svgPic--alignCenter {
+  align-self: center;
 }
-.crossClose{
-    position: absolute;
-    left:99%;
-    bottom:96%;
-    transform: translate(-50%, -50%);
-    
-    height:14px;
-    width:14px;
-    color:black;
-}
-.crossClose:hover{
-    color:rgb(255, 174, 25);
-}
-.svgPic--star{
-    width:100px;
-    height:min-content;
-    display: block;
-}
-.svgPic-starBig{
+.crossClose {
+  position: absolute;
+  left: 99%;
+  bottom: 96%;
+  transform: translate(-50%, -50%);
 
-    width:150px;
-    height:min-content;
-    display: block;
-    color:#474A51;
+  height: 14px;
+  width: 14px;
+  color: black;
+}
+.crossClose:hover {
+  color: rgb(255, 174, 25);
+}
+.svgPic-star {
+  width: 100px;
+  height: min-content;
+  display: block;
+}
+.svgPic-starBig {
+  width: 150px;
+  height: min-content;
+  display: block;
+  /* color:#474A51; */
+
+  position: relative;
+  color: #ffd800;
+
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-linejoin: round;
+  stroke-miterlimit: 2;
 }

@@ -1,5 +1,5 @@
 export function fillReviewPanel() {
-  fetch('/data/product-reviews.json')
+  fetch("/data/product-reviews.json")
     .then((response) => response.json())
     .then((data) => {
       let [avgRating, amountOfStars, ...starArr] = starRating(data);
@@ -42,39 +42,42 @@ export function fillReviewPanel() {
 
     let avg = Math.floor((sumRating / countAmount) * 10) / 10;
 
-    console.log(avg, countAmount, star_1, star_2, star_3, star_4, star_5);
+    // console.log(avg, countAmount, star_1, star_2, star_3, star_4, star_5);
     return [avg, countAmount, star_1, star_2, star_3, star_4, star_5];
   }
 
   function fillReviewPanel__header(avg) {
-    const ReviewPanel__header = document.querySelector('.review-panel__header');
+    const ReviewPanel__header = document.querySelector(".review-panel__header");
 
-    const Rating = ReviewPanel__header.querySelector('.js-overall-rating');
+    const Rating = ReviewPanel__header.querySelector(".js-overall-rating");
 
     Rating.innerHTML = avg;
 
-    const cover = ReviewPanel__header.querySelector('.review-panel__cover');
+    const cover = ReviewPanel__header.querySelector(".cover");
 
-    let percent = 100 - (avg / 5) * 100 + '%';
+    let percent = 100 - (avg / 5) * 100 + "%";
     cover.style.width = percent;
   }
 
   function fillReviewPanel__score(amountOfStars, starArr) {
-    const ReviewPanel__score = document.querySelector('.review-panel__score');
-    const starsPercentArr = ReviewPanel__score.querySelectorAll('.js-stars-percent');
-    const ReviewPanel__Covers = ReviewPanel__score.querySelectorAll('.review-panel__cover');
-    const ReviewPanel__rateLines = ReviewPanel__score.querySelectorAll('.review-panel__rate-line');
+    const ReviewPanel__score = document.querySelector(".review-panel__score");
+    const starsPercentArr =
+      ReviewPanel__score.querySelectorAll(".js-stars-percent");
+    const ReviewPanel__Covers = ReviewPanel__score.querySelectorAll(".cover");
+    const ReviewPanel__rateLines = ReviewPanel__score.querySelectorAll(
+      ".review-panel__rate-line",
+    );
 
     let percent = [];
 
     starsPercentArr.forEach((item, index) => {
       percent.push(Math.floor((starArr[4 - index] / amountOfStars) * 100));
-      item.innerHTML = percent[index] + '%';
+      item.innerHTML = percent[index] + "%";
     });
 
     ReviewPanel__Covers.forEach((item, index) => {
-      if (percent[index] < 1) item.style.borderRadius = '25px';
-      item.style.width = 100 - percent[index] + '%';
+      if (percent[index] < 1) item.style.borderRadius = "25px";
+      item.style.width = 100 - percent[index] + "%";
     });
   }
 }

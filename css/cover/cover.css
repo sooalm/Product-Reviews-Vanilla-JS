@@ -1,0 +1,17 @@
+.cover {
+  background: white;
+  height: 100%;
+  overflow: hidden;
+  mix-blend-mode: color;
+  /* border-radius: 0 5px 5px 0px; */
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.cover--lines {
+  background: #cccccc;
+  mix-blend-mode: normal;
+
+  border-radius: 0 25px 25px 0;
+}

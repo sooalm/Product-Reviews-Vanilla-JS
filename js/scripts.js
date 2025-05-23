@@ -1,6 +1,11 @@
-import { manageFlexMain } from './main.js';
-import { fillReviewPanel } from './review-panel filler.js';
+// import { manageFlexMain } from "./main resize (deprecated).js";
+import { fillMain } from "./main filler.js";
+import { fillReviewPanel } from "./review-panel filler.js";
+import { showMore } from "./main showMore";
 
-manageFlexMain();
-
-fillReviewPanel();
+// manageFlexMain();
+document.addEventListener("DOMContentLoaded", () => {
+  fillReviewPanel();
+  fillMain();
+  showMore();
+});

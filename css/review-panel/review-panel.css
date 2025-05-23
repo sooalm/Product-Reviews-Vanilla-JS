@@ -1,9 +1,9 @@
 .review-panel {
   display: flex;
-  align-items: center;
+  margin-top: 12rem;
 
   height: 100%;
-  width: 50%;
+  width: 40%;
 }
 .review-panel__container {
   display: flex;
@@ -42,8 +42,6 @@
   width: 150px;
   height: 10px;
   background: #ffd800;
-
-  /* margin: 0 1rem; */
   border-radius: 25px;
 
   box-sizing: content-box;
@@ -61,30 +59,13 @@
 .review-panel__rate-line--weakYellow-bg {
   background: #e9b308;
 }
-.review-panel__cover {
-  background: white;
-  height: 100%;
-  overflow: hidden;
-  mix-blend-mode: color;
-  /* border-radius: 0 5px 5px 0px; */
-
-  position: absolute;
-  top: 0;
-  right: 0;
-}
 .review-panel__rate-percent {
   width: 2.2rem;
   text-align: end;
 }
-.lines {
+.review__lines {
   margin: 0 1rem;
   position: relative;
   width: min-content;
   height: min-content;
-}
-.review-panel__cover--lines {
-  background: #cccccc;
-  mix-blend-mode: normal;
-
-  border-radius: 0 25px 25px 0;
 }

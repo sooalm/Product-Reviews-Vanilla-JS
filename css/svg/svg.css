@@ -8,7 +8,8 @@
 }
 .crossClose {
   position: absolute;
-  left: 99%;
+  right: 0.1rem;
+  top: 1.5rem;
   bottom: 96%;
   transform: translate(-50%, -50%);
 
@@ -23,6 +24,7 @@
   width: 100px;
   height: min-content;
   display: block;
+  color: #ffd800;
 }
 .svgPic-starBig {
   width: 150px;

@@ -9,7 +9,16 @@
 @import "/css/main/main__empty/main__empty.css";
 @import "/css/testimonial/testimonial.css";
 @import "/css/stars/stars.css";
+@import "/css/cover/cover.css";
 
+html {
+  min-height: 100vh;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 body {
   margin: 0;
   font-family:

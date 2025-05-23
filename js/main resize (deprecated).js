@@ -26,5 +26,5 @@ export function manageFlexMain() {
   window.addEventListener("load", manageFlexMain);
   window.addEventListener("resize", manageFlexMain);
 }
-
-export function fillMainReviewBox() {}
+// container.getBoundingClientRect().top +
+//parseInt(window.getComputedStyle(container).paddingTop);

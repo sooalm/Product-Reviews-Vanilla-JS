@@ -1,3 +1,4 @@
+import { virtualize } from "./virtualize/virtualize.js";
 export function fillMain() {
   async function loadData() {
     try {
@@ -19,9 +20,7 @@ export function fillMain() {
 
   function addTestimonial(dataReviews, dataUsers) {
     const Main = document.querySelector(".main");
-    const Testimonial_container = document.querySelector(
-      ".testimonial-container",
-    );
+    const Testimonial_container = document.querySelector(".testimonial-container");
 
     let reviewCollection = Object.values(dataReviews).reduce((map, dR) => {
       if (!map.has(dR.user_id)) {
@@ -52,15 +51,14 @@ export function fillMain() {
 
         if (reviewCollection.has(dU.user_id)) {
           countShow++;
-          console.log("click", reviewCollection);
-          fragment.appendChild(
-            createTestimonial(reviewCollection.get(dU.user_id), dU),
-          );
+          // console.log("click", reviewCollection);
+          fragment.appendChild(createTestimonial(reviewCollection.get(dU.user_id), dU));
           reviewCollection.delete(dU.user_id);
         }
       }
 
       Testimonial_container.appendChild(fragment);
+      virtualize();
     }
   }
 
@@ -116,10 +114,7 @@ export function fillMain() {
 
     // Создаем пути для звезд
     transforms.forEach((transform, index) => {
-      const path = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "path",
-      );
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
       path.setAttribute(
         "d",
         "m702.68 382.568 16.041 49.37h51.911l-41.997 30.512 16.042 49.37-41.997-30.512-41.997 30.512 16.041-49.37-41.996-30.512h51.911z",

@@ -1,10 +1,15 @@
 {
   "devDependencies": {
+    "@eslint/js": "^9.27.0",
     "eslint": "^8.57.1",
+    "globals": "^16.2.0",
     "prettier": "^3.5.3",
     "prettier-eslint": "^16.4.2",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1"
+  },
+  "prettier": {
+    "prettier.requireConfig": true
   },
   "scripts": {
     "build": "webpack --mode production --devtool false",

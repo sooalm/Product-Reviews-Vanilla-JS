@@ -61,18 +61,16 @@ export function fillReviewPanel() {
 
   function fillReviewPanel__score(amountOfStars, starArr) {
     const ReviewPanel__score = document.querySelector(".review-panel__score");
-    const starsPercentArr =
-      ReviewPanel__score.querySelectorAll(".js-stars-percent");
+    const starsPercentArr = ReviewPanel__score.querySelectorAll(".js-stars-percent");
     const ReviewPanel__Covers = ReviewPanel__score.querySelectorAll(".cover");
-    const ReviewPanel__rateLines = ReviewPanel__score.querySelectorAll(
-      ".review-panel__rate-line",
-    );
+    const ReviewPanel__rateLines = ReviewPanel__score.querySelectorAll(".review-panel__rate-line");
 
     let percent = [];
 
     starsPercentArr.forEach((item, index) => {
       percent.push(Math.floor((starArr[4 - index] / amountOfStars) * 100));
       item.innerHTML = percent[index] + "%";
+      console.log("percents", percent[index], item.innerHTML);
     });
 
     ReviewPanel__Covers.forEach((item, index) => {

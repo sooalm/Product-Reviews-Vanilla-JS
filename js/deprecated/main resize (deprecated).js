@@ -1,7 +1,5 @@
 export function manageFlexMain() {
-  console.log(
-    getComputedStyle(document.querySelector(".testimonial__score")).bottom,
-  );
+  console.log(getComputedStyle(document.querySelector(".testimonial__score")).bottom);
   const container = document.querySelector(".main");
   const items = Array.from(document.querySelectorAll(".testimonial"));
 

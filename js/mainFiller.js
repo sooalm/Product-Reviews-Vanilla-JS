@@ -20,7 +20,7 @@ export function fillMain() {
 
   function addTestimonial(dataReviews, dataUsers) {
     const Main = document.querySelector(".main");
-    const Testimonial_container = document.querySelector(".testimonial-container");
+    const container = document.querySelector(".phantom-container");
 
     let reviewCollection = Object.values(dataReviews).reduce((map, dR) => {
       if (!map.has(dR.user_id)) {
@@ -33,6 +33,7 @@ export function fillMain() {
 
     let countShow = 5;
     addTenTestimonials();
+    // virtualize();
 
     showMore.addEventListener("click", addTenTestimonials);
 
@@ -57,8 +58,11 @@ export function fillMain() {
         }
       }
 
-      Testimonial_container.appendChild(fragment);
-      virtualize();
+      container.appendChild(fragment);
+      // virtualize();
+
+      // setTimeout(() => virtualize(), 1000);
+      // virtualize();
     }
   }
 
@@ -82,9 +86,26 @@ export function fillMain() {
     username.className = "testimonial__username";
     username.textContent = du?.name || "Anonymous";
 
+    let dateTestimonial = new Date(dr.created_at);
+    const months = {
+      1: "января",
+      2: "февраля",
+      3: "марта",
+      4: "апреля",
+      5: "мая",
+      6: "июня",
+      7: "июля",
+      8: "августа",
+      9: "сентября",
+      10: "октября",
+      11: "ноября",
+      12: "декабря",
+    };
     const date = document.createElement("div");
     date.className = "testimonial__date";
-    date.textContent = "21 ноября 2025";
+    date.textContent = dateTestimonial
+      ? `${dateTestimonial.getDate()} ${months[dateTestimonial.getMonth() + 1]} ${dateTestimonial.getFullYear()}`
+      : "21 ноября 2025";
 
     const score = document.createElement("div");
     score.className = "testimonial__score";
@@ -94,7 +115,6 @@ export function fillMain() {
     const cover = document.createElement("div");
     cover.className = "cover";
 
-    console.log("rate===", dr.rating);
     let ratingCalculation = 100 - (dr.rating / 5) * 100 + "%";
     cover.style.width = dr.rating ? ratingCalculation : "100%";
     // Создаем SVG элемент

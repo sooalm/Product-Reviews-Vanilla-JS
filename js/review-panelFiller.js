@@ -66,11 +66,17 @@ export function fillReviewPanel() {
     const ReviewPanel__rateLines = ReviewPanel__score.querySelectorAll(".review-panel__rate-line");
 
     let percent = [];
-
+    let remainder = 0;
     starsPercentArr.forEach((item, index) => {
-      percent.push(Math.floor((starArr[4 - index] / amountOfStars) * 100));
+      let tempPercent = (starArr[4 - index] / amountOfStars) * 100;
+      remainder += tempPercent - Math.floor(tempPercent);
+
+      if (percent.length == 4) {
+        percent.push(Math.floor(tempPercent) + Math.floor(remainder));
+      } else {
+        percent.push(Math.floor(tempPercent));
+      }
       item.innerHTML = percent[index] + "%";
-      console.log("percents", percent[index], item.innerHTML);
     });
 
     ReviewPanel__Covers.forEach((item, index) => {

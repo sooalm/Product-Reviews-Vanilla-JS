@@ -1,5 +1,10 @@
-import { virtualize } from "./virtualize/virtualize.js";
 export function fillMain() {
+  const Main = document.querySelector(".main");
+  const scroll = Main.querySelector(".testimonial-container");
+  const container = scroll.querySelector(".phantom-container");
+
+  const ITEM_HEIGHT = 150;
+
   async function loadData() {
     try {
       const [reviewsRes, usersRes] = await Promise.all([
@@ -10,7 +15,7 @@ export function fillMain() {
       const dataReviews = await reviewsRes.json();
       const dataUsers = await usersRes.json();
 
-      addTestimonial(dataReviews, dataUsers);
+      reviewFiltr(dataReviews, dataUsers);
     } catch (error) {
       console.error("Ошибка загрузки данных:", error);
     }
@@ -18,11 +23,9 @@ export function fillMain() {
 
   loadData();
 
-  function addTestimonial(dataReviews, dataUsers) {
-    const Main = document.querySelector(".main");
-    const container = document.querySelector(".phantom-container");
-
+  function reviewFiltr(dataReviews, dataUsers) {
     let reviewCollection = Object.values(dataReviews).reduce((map, dR) => {
+      console.log("#flflflflflflflflflflflflflflflflfl");
       if (!map.has(dR.user_id)) {
         map.set(dR.user_id, dR);
       }
@@ -31,38 +34,73 @@ export function fillMain() {
 
     let showMore = Main.querySelector(".main__showMore");
 
-    let countShow = 5;
-    addTenTestimonials();
-    // virtualize();
-
-    showMore.addEventListener("click", addTenTestimonials);
-
-    function addTenTestimonials() {
-      if (reviewCollection.size === 0) {
-        showMore.style.display = "none"; // Скрываем кнопку
-        return;
-      }
-
-      const fragment = document.createDocumentFragment();
+    let virtualizeArray = [];
+    addTen();
+    showMore.addEventListener("click", addTen);
+    function addTen() {
+      let amount = 0;
       for (let dU of Object.values(dataUsers)) {
-        if (countShow >= 10) {
-          countShow = 0;
-          break;
-        }
-
-        if (reviewCollection.has(dU.user_id)) {
-          countShow++;
-          // console.log("click", reviewCollection);
-          fragment.appendChild(createTestimonial(reviewCollection.get(dU.user_id), dU));
+        if (reviewCollection.has(dU.user_id) && amount < 10) {
+          amount++;
+          let temp = createTestimonial(reviewCollection.get(dU.user_id), dU);
           reviewCollection.delete(dU.user_id);
+          virtualizeArray.push(temp);
+          container.append(temp);
         }
       }
+      dynamicLoad(virtualizeArray);
+    }
+  }
 
-      container.appendChild(fragment);
-      // virtualize();
+  function dynamicLoad(virtualizeArray) {
+    let topEmptyDiv = scroll.querySelector(".empty-div--top");
+    if (!topEmptyDiv) {
+      topEmptyDiv = document.createElement("div");
+      topEmptyDiv.classList.add("empty-div--top");
+      topEmptyDiv.style.height = 0 + "px";
+      // topEmptyDiv.style.backgroundColor = "red";
+      topEmptyDiv.style.width = "100%";
+      topEmptyDiv.style.flexShrink = "0";
 
-      // setTimeout(() => virtualize(), 1000);
-      // virtualize();
+      scroll.prepend(topEmptyDiv);
+    }
+    let bottomEmptyDiv = scroll.querySelector(".empty-div--bottom");
+    if (!bottomEmptyDiv) {
+      bottomEmptyDiv = document.createElement("div");
+      bottomEmptyDiv.classList.add("empty-div--bottom");
+      bottomEmptyDiv.style.height = 0 + "px";
+      // bottomEmptyDiv.style.backgroundColor = "red";
+      bottomEmptyDiv.style.width = "100%";
+      bottomEmptyDiv.style.flexShrink = "0";
+
+      scroll.append(bottomEmptyDiv);
+    }
+
+    scroll.removeEventListener("scroll", virtualize);
+    scroll.addEventListener("scroll", virtualize);
+
+    function virtualize() {
+      const firstIndex = Math.floor(scroll.scrollTop / ITEM_HEIGHT);
+      const visibleItemsCount = Math.ceil(scroll.clientHeight / ITEM_HEIGHT);
+      const lastIndex = Math.min(firstIndex + visibleItemsCount, virtualizeArray.length);
+
+      // 1. Обновляем верхний пустой div (замещает скрытые элементы сверху)
+      topEmptyDiv.style.height = `${firstIndex * ITEM_HEIGHT}px`;
+
+      // 2. Обновляем нижний пустой div (замещает скрытые элементы снизу)
+      const hiddenBottomItems = virtualizeArray.length - lastIndex;
+      bottomEmptyDiv.style.height = `${hiddenBottomItems * ITEM_HEIGHT}px`;
+
+      // 3. Обновляем видимость элементов
+      virtualizeArray.forEach((item, index) => {
+        if (index >= firstIndex && index < lastIndex) {
+          // Показываем элемент в видимой области
+          item.classList.remove("testimonial--noDisplay");
+        } else {
+          // Скрываем элементы вне видимой области
+          item.classList.add("testimonial--noDisplay");
+        }
+      });
     }
   }
 
@@ -163,4 +201,30 @@ export function fillMain() {
 
     return testimonial;
   }
+
+  // function dynamicLoad(reviewCollection, dataUsers) {
+  //   const Main = document.querySelector(".main");
+  //   const container = Main.querySelector(".phantom-container");
+  //   let showMore = Main.querySelector(".main__showMore");
+
+  //   const fragment = document.createDocumentFragment();
+  //   // let countShow = 1;
+  //   for (let dU of Object.values(dataUsers)) {
+  //     // if (countShow >= 10) {
+  //     //   countShow = 0;
+  //     //   break;
+  //     // }
+
+  //     if (reviewCollection.has(dU.user_id)) {
+  //       countShow++;
+
+  //       // fragment.appendChild(createTestimonial(reviewCollection.get(dU.user_id), dU));
+  //       virtualizeArray.push(createTestimonial(reviewCollection.get(dU.user_id), dU));
+
+  //       reviewCollection.delete(dU.user_id);
+  //     }
+  //   }
+
+  //   // container.appendChild(fragment);
+  // }
 }

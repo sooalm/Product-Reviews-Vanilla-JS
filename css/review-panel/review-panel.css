@@ -80,18 +80,17 @@
   .review-panel {
     height: min-content;
     width: min-content;
-  }
-  .review-panel {
     margin: 0;
   }
 }
-@media (max-width: 1080px) and (max-height: 700px) {
-  .review-panel {
-    margin-top: 18rem;
-  }
-}
-@media (max-width: 800px) and (max-height: 700px) {
+
+@media (max-height: 750px) {
   .review-panel {
     margin-top: 0rem;
+  }
+}
+@media (max-width: 900px) {
+  .container {
+    margin-top: 0;
   }
 }

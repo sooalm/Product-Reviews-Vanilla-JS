@@ -17,7 +17,7 @@
   height: 50px;
   flex-shrink: 0;
   background: white;
-  visibility: hidden;
+  /* visibility: hidden; */
   /* transition: 0.3s; */
 }
 .main__showMore:hover {

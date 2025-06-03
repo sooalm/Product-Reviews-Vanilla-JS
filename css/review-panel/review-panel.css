@@ -69,3 +69,29 @@
   width: min-content;
   height: min-content;
 }
+
+@media (max-width: 1000px) {
+  .review-panel__container {
+    padding-left: 0px;
+    transition: padding-left 0.6s ease-in-out;
+  }
+}
+@media (max-width: 850px) {
+  .review-panel {
+    height: min-content;
+    width: min-content;
+  }
+  .review-panel {
+    margin: 0;
+  }
+}
+@media (max-width: 1080px) and (max-height: 700px) {
+  .review-panel {
+    margin-top: 18rem;
+  }
+}
+@media (max-width: 800px) and (max-height: 700px) {
+  .review-panel {
+    margin-top: 0rem;
+  }
+}

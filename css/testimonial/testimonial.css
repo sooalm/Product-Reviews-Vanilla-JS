@@ -9,11 +9,11 @@
   will-change: transform; /* Подсказка для браузера */
 }
 .testimonial-container::-webkit-scrollbar {
-  /* width: 0; */
+  width: 0;
 
-  /* height: 0; */
+  height: 0;
 
-  /* background: transparent; */
+  background: transparent;
 }
 .testimonial {
   width: 100%;
@@ -79,9 +79,48 @@
 }
 
 .testimonial__quote {
+  width: 580px;
 }
 .testimonial__quote--empty {
   font-style: italic;
   font-size: small;
   color: gray;
+}
+
+@media (max-width: 1000px) {
+  .testimonial {
+    padding: 0;
+    transition: padding 0.6s ease-in-out;
+  }
+}
+@media (max-width: 850px) {
+  .testimonial__container {
+    gap: 1rem;
+    /* border: purple solid 1px; */
+  }
+  .testimonial__quote {
+    width: 350px;
+  }
+}
+
+@media (max-width: 450px) {
+  .phantom-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .testimonial {
+    width: 320px;
+    font-size: 0.8rem;
+  }
+  .testimonial__score {
+    bottom: 0.8rem;
+  }
+  .testimonial__username {
+    font-size: 0.8rem;
+  }
+  .testimonial__quote {
+    padding: 0 0rem 1rem 0;
+    font-size: 1rem;
+  }
 }

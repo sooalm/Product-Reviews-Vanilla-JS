@@ -1,56 +1,51 @@
-export function virtualize(reviewCollection, dataUsers) {
-  const Main = document.querySelector(".main");
-  const scroll = document.querySelector(".testimonial-container");
-  const container = scroll.querySelector(".phantom-container");
-  const ITEM_HEIGHT = 150;
-  let allTestimonials = Array.from(container.querySelectorAll(".testimonial"));
-  scroll.addEventListener("scroll", function () {
-    const scrollTOP = container.scrollTop;
-    const firstIndex = Math.floor(scrollTOP / 150);
-    const lastIndex = firstIndex + 6;
+export function virtualize(virtualizeArray, scroll, ITEM_HEIGHT) {
+  let topEmptyDiv = scroll.querySelector(".empty-div--top");
+  if (!topEmptyDiv) {
+    topEmptyDiv = document.createElement("div");
+    topEmptyDiv.classList.add("empty-div--top");
+    topEmptyDiv.style.height = 0 + "px";
+    // topEmptyDiv.style.backgroundColor = "red";
+    topEmptyDiv.style.width = "100%";
+    topEmptyDiv.style.flexShrink = "0";
 
-    scroll.style.height = firstIndex * 150 + "px";
+    scroll.prepend(topEmptyDiv);
+  }
+  let bottomEmptyDiv = scroll.querySelector(".empty-div--bottom");
+  if (!bottomEmptyDiv) {
+    bottomEmptyDiv = document.createElement("div");
+    bottomEmptyDiv.classList.add("empty-div--bottom");
+    bottomEmptyDiv.style.height = 0 + "px";
+    // bottomEmptyDiv.style.backgroundColor = "red";
+    bottomEmptyDiv.style.width = "100%";
+    bottomEmptyDiv.style.flexShrink = "0";
 
-    const visibleItems = [];
-    allTestimonials.slice(firstIndex, lastIndex).forEach((item) => {
-      // const header = item.firstElementChild; // testimonial__header
-      // const starsContainer = header.lastElementChild; // testimonial__score
+    scroll.append(bottomEmptyDiv);
+  }
 
-      // header.children[1].textContent = "assadsda"; // testimonial__username
-      // starsContainer.querySelector(".cover").style.width = "0%"; // значение ширины
-      // header.firstElementChild.src = "img/Joe Peach.jpg"; // testimonial__img
-      // item.lastElementChild.textContent = "lorem sdasddf safsfd"; // testimonial__quote
-      // header.children[2].textContent = "21 november 2039"; // testimonial__date
-      visibleItems.push(item);
+  scroll.removeEventListener("scroll", virtualizeScroll);
+  scroll.addEventListener("scroll", virtualizeScroll);
+
+  function virtualizeScroll() {
+    const firstIndex = Math.floor(scroll.scrollTop / ITEM_HEIGHT);
+    const visibleItemsCount = Math.ceil(scroll.clientHeight / ITEM_HEIGHT);
+    const lastIndex = Math.min(firstIndex + visibleItemsCount, virtualizeArray.length);
+
+    // 1. Обновляем верхний пустой div (замещает скрытые элементы сверху)
+    topEmptyDiv.style.height = `${firstIndex * ITEM_HEIGHT}px`;
+
+    // 2. Обновляем нижний пустой div (замещает скрытые элементы снизу)
+    const hiddenBottomItems = virtualizeArray.length - lastIndex;
+    bottomEmptyDiv.style.height = `${hiddenBottomItems * ITEM_HEIGHT}px`;
+
+    // 3. Обновляем видимость элементов
+    virtualizeArray.forEach((item, index) => {
+      if (index >= firstIndex && index < lastIndex) {
+        // Показываем элемент в видимой области
+        item.classList.remove("testimonial--noDisplay");
+      } else {
+        // Скрываем элементы вне видимой области
+        item.classList.add("testimonial--noDisplay");
+      }
     });
-
-    scroll.replaceChildren(container, ...visibleItems);
-  });
-
-  // function fillVisible(allTestimonials) {
-  //   scroll.scrollY;
-
-  //   for (let i = 0; i < allTestimonial.length; i++) {
-  //     const testimonial = allTestimonial[i];
-
-  //     if (ITEM_HEIGHT + testimonial.offsetTop < scroll.scrollTop) {
-  //       let reviewId = dataUser[i].user_id;
-
-  //       if (reviewCollection.has(reviewId)) {
-  //         let rc = reviewCollection.get(dataUser[i].user_id);
-  //         let dU = dataUsers[i];
-
-  //         // Находим внутренние элементы через DOM-свойства
-  //         const header = testimonial.firstElementChild; // testimonial__header
-  //         const starsContainer = header.lastElementChild; // testimonial__score
-
-  //         header.children[1].textContent; // testimonial__username
-  //         starsContainer.querySelector(".cover").style.width; // значение ширины
-  //         header.firstElementChild.src; // testimonial__img
-  //         testimonial.lastElementChild.textContent; // testimonial__quote
-  //         header.children[2].textContent; // testimonial__date
-  //       }
-  //     }
-  //   }
-  // }
+  }
 }
